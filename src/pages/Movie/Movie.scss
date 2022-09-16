@@ -1,0 +1,26 @@
+@use '../../sass/' as *;
+
+.moviepage {
+    text-align: center;
+    margin: $header-height 0 2rem;
+
+    .search {
+        margin: 2rem 0;
+        @include flex(center, center);
+
+        input {
+            border-radius: $border-radius;
+            padding: 0.5rem 1rem;
+        }
+    }
+
+    .movieGrid__container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 3rem 2rem;
+
+        @include tablet {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
