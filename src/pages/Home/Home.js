@@ -33,10 +33,6 @@ const Home = () => {
         <>
             {loading && <div className='overlay'><PulseLoader color="#FF0000" /></div>}
             <Swiper
-                style={{
-                    "--swiper-navigation-color": "#fff",
-                    "--swiper-pagination-color": "#fff",
-                }}
                 className='slider'
                 modules={[Autoplay]}
                 grabCursor={true}

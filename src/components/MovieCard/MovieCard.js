@@ -5,7 +5,7 @@ import imgPlay from '../../assets/tmovie.png';
 
 const MovieCard = ({ image, id, title, category }) => {
     return (
-        <Link to={`detail/${category}/${id}`} >
+        <Link to={`/detail/${category}/${id}`} >
             <div className='movie-card' style={{ backgroundImage: `url(${image})` }}>
                 <div className='play-btn'>
                     <img src={imgPlay} alt='play-icon-image'></img>

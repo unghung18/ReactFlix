@@ -6,7 +6,7 @@ import tmdbApi from '../../api/tmdbApi';
 import MovieCard from '../MovieCard/MovieCard';
 import apiConfig from '../../api/apiConfig';
 
-const MovieList = ({ category, type }) => {
+const MovieList = ({ category, type, id }) => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
@@ -15,12 +15,16 @@ const MovieList = ({ category, type }) => {
             const params = {
                 page: 1
             }
-
-            if (category === 'movie') {
-                response = await tmdbApi.getMoviesList(type, { params });
+            if (type !== 'similar') {
+                if (category === 'movie') {
+                    response = await tmdbApi.getMoviesList(type, { params });
+                }
+                else {
+                    response = await tmdbApi.getTvList(type, { params });
+                }
             }
             else {
-                response = await tmdbApi.getTvList(type, { params });
+                response = await tmdbApi.similar(category, id);
             }
             setItems(response.results);
         }

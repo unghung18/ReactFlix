@@ -30,7 +30,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 7rem;
+    padding: 9rem 0;
     width: 80%;
     @include flex(space-around, center);
 
@@ -89,7 +89,7 @@
         transform: scale(0);
         transition: transform 0.7s ease;
 
-        @include mobile {
+        @include tablet {
             display: none;
         }
     }
