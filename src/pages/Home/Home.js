@@ -16,7 +16,7 @@ const Home = () => {
     const [slideItems, setSlideItems] = useState([]);
 
     const getMoviesPopular = async () => {
-        setLoading(false)
+        setLoading(true)
         try {
             const params = {}
             const response = await tmdbApi.getMoviesList('popular', { params });
