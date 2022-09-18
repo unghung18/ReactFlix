@@ -47,7 +47,7 @@ const Header = () => {
             <div className="header__container container">
                 <div className="logo">
                     <img src={logo} alt="" />
-                    <Link to="/">tMovies</Link>
+                    <Link to="/">ReactFlix</Link>
                 </div>
                 <ul className="header__nav">
                     {

@@ -3,10 +3,15 @@ import { useState } from 'react';
 import './Slider.scss';
 import apiConfig from '../../api/apiConfig';
 import Modal from '../../components/Modal/Modal';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const Slider = ({ data }) => {
+
+    const navigate = useNavigate();
+    console.log(data)
+
     const [openModal, setOpenModal] = useState(false);
     return (
         <>
@@ -17,7 +22,7 @@ const Slider = ({ data }) => {
                         <h2 className="title">{data.title}</h2>
                         <div className="overview">{data.overview}</div>
                         <div className="btns">
-                            <button className='btn'>
+                            <button className='btn' onClick={() => navigate(`/detail/movie/${data.id}`)}>
                                 Watch now
                             </button>
                             <button className='btn' onClick={() => setOpenModal(true)}>
